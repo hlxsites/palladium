@@ -16,7 +16,7 @@ The tool uses selenium with a chrome driver to load a new google chrome instance
 
 ## setup
 - download chrome, install it
-- download chrome driver. On mac, chrome dreiver is prevented to be opened at first. Open it manually where you need to confirm that this unknown software is allowed to run. see https://www.swtestacademy.com/install-chrome-driver-on-mac/
+- download chrome driver. On mac, chrome driver is prevented to be opened at first. Open it manually where you need to confirm that this unknown software is allowed to run. see https://www.swtestacademy.com/install-chrome-driver-on-mac/
 - define the system env 'webdriver.chrome.driver' to point to your chrome driver, or put the chrome driver to ~/adobe/tools/chromedriver
 
 ## how to run the LHS bot
@@ -39,5 +39,5 @@ Analyze 3/18: https://www.palladiumhotelgroup.com/es/cares/4-causas/infancia/pad
 ```
 
 ## generated artifacts
-- the tool builds a CSV with all the scored, the URL and a link to the screenshot: lhs-scores.csv
+- the tool builds a CSV with all the scores, the URL and a link to the screenshot: lhs-scores.csv
 - for each url, a screenshot is stored with a unique GUID as a name within the screenshot folder
