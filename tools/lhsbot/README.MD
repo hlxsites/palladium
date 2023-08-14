@@ -25,6 +25,18 @@ The tool uses selenium with a chrome driver to load a new google chrome instance
 - run the tool using 'mvn exec:java'
 - wait for it to end, find below output
 
+### verbose output
+while running, the tool prints to the console some stats, such as
+- run od runs with URL
+- the 4 LHS kpis grabbed
+'''
+Analyze 3/18: https://www.palladiumhotelgroup.com/es/cares/4-causas/infancia/padel-silla-menorca/
+  - Performance: 29
+  - Accessibility: 73
+  - Best Practices: 68
+  - SEO: 70
+'''
+
 ## generated artifacts
 - the tool builds a CSV with all the scored, the URL and a link to the screenshot: lhs-scores.csv
 - for each url, a screenshot is stored with a unique GUID as a name within the screenshot folder
