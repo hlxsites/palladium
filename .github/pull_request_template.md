@@ -3,5 +3,5 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 Fix #<gh-issue-id>
 
 Test URLs:
-- Before: https://main--{repo}--{owner}.hlx.page/
-- After: https://<branch>--{repo}--{owner}.hlx.page/
+- Before: https://main--palladium--hlxsites.hlx.page/us/en/
+- After: https://<branch>--palladium--hlxsites.hlx.page/us/en/
