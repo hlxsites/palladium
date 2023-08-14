@@ -27,7 +27,7 @@ The tool uses selenium with a chrome driver to load a new google chrome instance
 
 ### verbose output
 while running, the tool prints to the console some stats, such as
-- run od runs with URL
+- number of runs
 - the 4 LHS kpis grabbed
 
 ```
