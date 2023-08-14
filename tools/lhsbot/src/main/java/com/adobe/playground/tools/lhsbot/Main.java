@@ -34,11 +34,11 @@ public class Main {
 	private static ChromeOptions options;
 
 	public static void main(String... args) {
+		setup();
 		if (new File(CAPTURE_CSV).exists()) {
 			System.out.println("lhs-scores.csv already exists, do not overwrite... stop.");
 			System.exit(0);
 		}
-		setup();
 		List<Score> allScores = new ArrayList<Score>();
 		try {
 			int current = 0;
@@ -91,7 +91,10 @@ public class Main {
 	}
 
 	private static void setup() {
-		System.setProperty("webdriver.chrome.driver", "/Users/rliechti/adobe/tools/chromedriver");
+		if (System.getProperty("webdriver.chrome.driver", null) == null) {
+			System.setProperty("webdriver.chrome.driver", "/Users/"+System.getenv("USER")+"/adobe/tools/chromedriver");
+		}
+		System.out.println("Using chrome driver "+System.getProperty("webdriver.chrome.driver"));
 		options = new ChromeOptions();
 		options.addArguments("--headless", "--window-size=1920,1200");
 		// options.addArguments("--window-size=1920,1200");
