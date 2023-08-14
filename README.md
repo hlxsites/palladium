@@ -17,12 +17,6 @@ npm i
 npm run lint
 ```
 
-## Tests
-
-```sh
-npm test
-```
-
 ## Local development
 
 1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/helix-cli`
