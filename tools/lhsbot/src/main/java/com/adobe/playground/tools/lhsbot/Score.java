@@ -11,7 +11,6 @@ public class Score {
 	Date captureDate;
 
 	public Score() {
-		captureDate = new Date();
 		nr = ++nextRun;
 	}
 

@@ -1,6 +1,7 @@
 package com.adobe.playground.tools.lhsbot;
 
 import java.time.Duration;
+import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
@@ -62,6 +63,7 @@ public class LHSRunnable implements Runnable {
 		score.seo = seo;
 		score.url = url;
 		score.screenshot = "screenshot/"+guid+".png";
+		score.captureDate = new Date();
 		allScores.add(score);
 	}
 
