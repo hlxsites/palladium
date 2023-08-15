@@ -61,6 +61,7 @@ public class LHSRunnable implements Runnable {
 		score.performance = performance;
 		score.seo = seo;
 		score.url = url;
+		score.screenshot = "screenshot/"+guid+".png";
 		allScores.add(score);
 	}
 

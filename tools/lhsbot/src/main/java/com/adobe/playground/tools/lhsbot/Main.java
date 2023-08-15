@@ -63,7 +63,7 @@ public class Main {
 		Collections.sort(sortedResults, new Comparator<Score>() {
 			@Override
 			public int compare(Score o1, Score o2) {
-				return o1.getNr().compareTo(o2.getNr());
+				return o1.nr.compareTo(o2.nr);
 			}
 		});
 		Path path = Paths.get(CAPTURE_CSV);

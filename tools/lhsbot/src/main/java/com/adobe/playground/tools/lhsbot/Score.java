@@ -6,21 +6,14 @@ public class Score {
 
 	private static int nextRun = 0;
 
-	private int nr;
-
-	String url, performance, accessibility, bestpractices, seo;
-	private Date captureDate;
-	private String screenshot;
+	Integer nr;
+	String url, performance, accessibility, bestpractices, seo,screenshot;
+	Date captureDate;
 
 	public Score() {
 		captureDate = new Date();
 		nr = ++nextRun;
 	}
-
-	public Integer getNr() {
-		return nr;
-	}
-	
 
 	/*
 	 * returns CSV
