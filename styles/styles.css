@@ -20,8 +20,8 @@
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
+  --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
+  --heading-font-family: 'Vanitas-Regular', 'Vanitas-Regular Fallback', sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -43,12 +43,92 @@
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 100.06%;
-  ascent-override: 95%;
+  font-family: 'Avenir-Roman Fallback';
+  font-style: normal;
+  font-weight: 400;
   src: local('Arial');
+  ascent-override: 98.43%;
+  descent-override: 36.03%;
+  line-gap-override: 0.00%;
+  size-adjust: 101.59%;
 }
 
+@font-face {
+  font-family: 'Avenir-Medium Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 97.27%;
+  descent-override: 35.60%;
+  line-gap-override: 0.00%;
+  size-adjust: 102.80%;
+}
+
+@font-face {
+  font-family: 'Avenir-Book Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 99.30%;
+  descent-override: 36.34%;
+  line-gap-override: 0.00%;
+  size-adjust: 100.71%;
+}
+
+@font-face {
+  font-family: 'Avenir-Light Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 75.69%;
+  descent-override: 24.43%;
+  line-gap-override: 20.02%;
+  size-adjust: 99.89%;
+}
+
+@font-face {
+  font-family: 'Vanitas-Regular Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 89.12%;
+  descent-override: 27.86%;
+  line-gap-override: 8.81%;
+  size-adjust: 89.75%;
+}
+
+@font-face {
+  font-family: 'Vanitas-Bold Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 88.60%;
+  descent-override: 27.69%;
+  line-gap-override: 8.76%;
+  size-adjust: 90.27%;
+}
+
+@font-face {
+  font-family: 'Vanitas-Italic Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 89.11%;
+  descent-override: 27.85%;
+  line-gap-override: 8.81%;
+  size-adjust: 89.75%;
+}
+
+@font-face {
+  font-family: 'Vanitas-Bold-Italic Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 88.59%;
+  descent-override: 27.69%;
+  line-gap-override: 8.76%;
+  size-adjust: 90.28%;
+}
 
 @media (min-width: 900px) {
   :root {
