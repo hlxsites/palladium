@@ -1,0 +1,13 @@
+version: 1
+indices:
+  default:
+    include:
+      - /es/cares/4-causas/**
+    target: /query-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
