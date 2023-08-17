@@ -56,15 +56,10 @@ export default {
     params,
   }) => {
     // define the main element: the one that will be transformed to Markdown
-
     const main = document.body;
 
     // use helper method to remove header, footer, etc.
-    WebImporter.DOMUtils.remove(main, [
-      '.header-xf',
-      'footer',
-      '.footer-brand-xf',
-    ]);
+    WebImporter.DOMUtils.remove(main, ['header', 'footer']);
 
     // create the metadata block and append it to the main element
     createMetadata(main, document);
