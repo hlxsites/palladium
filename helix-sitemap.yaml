@@ -1,0 +1,7 @@
+version: 1
+sitemaps:
+  default:
+    origin: https://main--palladium--hlxsites.hlx.live
+    source: /query-index.json
+    destination: /es/cares/4-causas/infancia/sitemap.xml
+    lastmod: YYYY-MM-DD
