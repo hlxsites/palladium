@@ -12,6 +12,7 @@
 /* global WebImporter */
 /* eslint-disable no-console, class-methods-use-this */
 
+
 const createMetadata = (main, document) => {
   const meta = {};
 
@@ -50,16 +51,16 @@ export default {
    */
   transformDOM: ({
     // eslint-disable-next-line no-unused-vars
-    document,
-    url,
-    html,
-    params,
+    document, url, html, params,
   }) => {
     // define the main element: the one that will be transformed to Markdown
     const main = document.body;
 
     // use helper method to remove header, footer, etc.
-    WebImporter.DOMUtils.remove(main, ['header', 'footer']);
+    WebImporter.DOMUtils.remove(main, [
+      'header',
+      'footer',
+    ]);
 
     // create the metadata block and append it to the main element
     createMetadata(main, document);
@@ -78,9 +79,6 @@ export default {
    */
   generateDocumentPath: ({
     // eslint-disable-next-line no-unused-vars
-    document,
-    url,
-    html,
-    params,
+    document, url, html, params,
   }) => WebImporter.FileUtils.sanitizePath(new URL(url).pathname.replace(/\.html$/, '').replace(/\/$/, '')),
 };
