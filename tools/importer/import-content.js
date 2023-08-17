@@ -82,8 +82,5 @@ export default {
     url,
     html,
     params,
-  }) =>
-    WebImporter.FileUtils.sanitizePath(
-      new URL(url).pathname.replace(/\.html$/, '').replace(/\/$/, '')
-    ),
+  }) => WebImporter.FileUtils.sanitizePath(new URL(url).pathname.replace(/\.html$/, '').replace(/\/$/, '')),
 };
