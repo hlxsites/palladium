@@ -15,9 +15,9 @@
 const createMetadata = (main, document) => {
   const meta = {};
 
-  const title = document.querySelector("title");
+  const title = document.querySelector('title');
   if (title) {
-    meta.Title = title.textContent.replace(/[\n\t]/gm, "");
+    meta.Title = title.textContent.replace(/[\n\t]/gm, '');
   }
 
   const desc = document.querySelector('[property="og:description"]');
@@ -27,7 +27,7 @@ const createMetadata = (main, document) => {
 
   const img = document.querySelector('[property="og:image"]');
   if (img && img.content) {
-    const el = document.createElement("img");
+    const el = document.createElement('img');
     el.src = img.content;
     meta.Image = el;
   }
@@ -61,9 +61,9 @@ export default {
 
     // use helper method to remove header, footer, etc.
     WebImporter.DOMUtils.remove(main, [
-      ".header-xf",
-      "footer",
-      ".footer-brand-xf",
+      '.header-xf',
+      'footer',
+      '.footer-brand-xf',
     ]);
 
     // create the metadata block and append it to the main element
@@ -89,6 +89,6 @@ export default {
     params,
   }) =>
     WebImporter.FileUtils.sanitizePath(
-      new URL(url).pathname.replace(/\.html$/, "").replace(/\/$/, "")
+      new URL(url).pathname.replace(/\.html$/, '').replace(/\/$/, '')
     ),
 };
