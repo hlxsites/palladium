@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import { transformers, asyncTransformers, preTransformers, postTransformers } from './transformers/index.js';
 /* global WebImporter */
 export default {
