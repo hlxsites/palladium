@@ -20,8 +20,8 @@
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: 'Avenir-Roman', 'Avenir-Roman Fallback';
-  --heading-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback';
+  --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
+  --heading-font-family: 'Vanitas-Regular', 'Vanitas-Regular Fallback', sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
