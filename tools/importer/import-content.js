@@ -57,8 +57,9 @@ export default {
 
     // use helper method to remove header, footer, etc.
     WebImporter.DOMUtils.remove(main, [
-      'header',
+      '.header-xf',
       'footer',
+      '.footer-brand-xf',
     ]);
 
     // create the metadata block and append it to the main element
