@@ -12,12 +12,13 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-color: #ec7205;
+  --link-hover-color: #154259;
   --background-color: #fff;
   --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
-  --text-color: #000;
+  --highlight-background-color: #FAFAF7;
+  --text-color: #3D3D3D;
+  --heading-color: #AEA780;
 
   /* fonts */
   --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
@@ -25,17 +26,17 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 16px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
+  --heading-font-size-xxl: 32px;
+  --heading-font-size-xl: 32px;
   --heading-font-size-l: 32px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-xs: 16px;
 
   /* nav height */
   --nav-height: 64px;
@@ -134,10 +135,10 @@
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
+    --heading-font-size-l: 32px;
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xs: 16px;
   }
 }
 
@@ -145,7 +146,7 @@ body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: 1.4;
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
@@ -162,23 +163,41 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
+  color: var(--heading-color);
 }
 
 h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
+h2 { font-size: var(--heading-font-size-l) }
+h3 { font-size: var(--heading-font-size-s) }
+h4 { font-size: var(--heading-font-size-xs) }
+h5 { font-size: var(--heading-font-size-xs) }
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 0 0 10px;
+}
+
+main li {
+  list-style: none;
+}
+
+main li::before {
+  content: "";
+  background: url('../icons/bullet-check.svg') center center / contain no-repeat;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 3px;
+}
+
+main .cards li::before {
+  display: none;
 }
 
 hr {
@@ -225,23 +244,24 @@ a.button:any-link, button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
+  border: 1px solid var(--heading-color);
+  padding: 16px 60px;
   text-align: center;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
+  font-size: var(--body-font-size-s);
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--heading-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: var(--background-color);
+  color: var(--heading-color);
   cursor: pointer;
 }
 
@@ -328,4 +348,10 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+  padding: 25px 0;
+  text-align: center;
+}
+
+main .section.highlight h2 {
+  margin-top: 0;
 }
