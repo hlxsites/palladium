@@ -14,7 +14,7 @@ main .hero {
   min-height: 375px;
   max-height: 800px;
   height: 75vh;
-  background: radial-gradient(40% 100% at 10% 85%, rgba(24 20 9 / 80%) 0, rgba(24 20 9 / 0%) 100%);
+  /*background: radial-gradient(40% 100% at 10% 85%, rgba(24 20 9 / 80%) 0, rgba(24 20 9 / 0%) 100%);*/
   opacity: 1;
   overflow: hidden;
   display: flex;
