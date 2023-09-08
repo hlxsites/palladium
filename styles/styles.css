@@ -22,10 +22,12 @@
 
   /* fonts */
   --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
+  --body-roman-font-family: 'Avenir-Roman', 'Avenir-Roman Fallback', sans-serif;
   --heading-font-family: 'Vanitas-Regular', 'Vanitas-Regular Fallback', sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
+  --body-font-size-l: 18px;
   --body-font-size-m: 16px;
   --body-font-size-s: 14px;
   --body-font-size-xs: 12px;
@@ -334,7 +336,7 @@ main .section {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 25px;
   }
 }
 

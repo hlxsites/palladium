@@ -1,0 +1,35 @@
+.card-tabs-container .block.cards {
+  display: none;
+}
+
+.card-tabs-container .block.cards.active {
+  display: block;
+}
+
+.card-tabs ul {
+  text-transform: capitalize;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.card-tabs li {
+  font-family: var(--body-roman-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 20px;
+  align-items: center;
+  color: rgb(61 61 61);
+  padding: 16px 0px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.card-tabs li::before {
+  display: none;
+}
+
+.card-tabs li.active {
+  border-bottom: 2px solid var(--heading-color);
+}
