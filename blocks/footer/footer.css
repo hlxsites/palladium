@@ -23,5 +23,21 @@ footer ul {
 }
 
 ul li {
-  margin-right: 10px; 
+  align-items: center;
+  margin: 0 10px; 
+}
+
+
+.footer-wrapper div div div:nth-last-child(2) ul{
+ margin: 15px 70px;
+}
+
+.footer-wrapper div div div:last-child p{
+color: #666;
+font-weight: bold;
+font-size: 14px;
+font-family: 'Avenir-Book',sans-serif;
+padding: 0 8px;
+display: inline-block;
+margin: 10px 45px;
 }
