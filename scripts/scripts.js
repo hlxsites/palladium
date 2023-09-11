@@ -18,6 +18,16 @@ import {
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
+ * Builds breadcrumbs block and prepends to main in a new section.
+ * @param {Element} main The container element
+ */
+function buildBreadcrumbsBlock(main) {
+  const section = document.createElement('div');
+  section.append(buildBlock('breadcrumbs', { elems: [] }));
+  main.prepend(section);
+}
+
+/**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
  */
@@ -50,6 +60,7 @@ async function loadFonts() {
  */
 function buildAutoBlocks(main) {
   try {
+    buildBreadcrumbsBlock(main);
     buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
