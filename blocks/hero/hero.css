@@ -22,20 +22,22 @@ main .hero {
   color: var(--background-color);
 }
 
-main .hero::before {
-  content: '';
-  background: url('/icons/palladium-care.svg');
-  width: 200px;
-  height: 175px;
-  background-size: cover;
-  position: absolute;
-  top: auto;
-  left: auto;
-  right: 3%;
-  bottom: 10%;
-  margin: auto;
-  mix-blend-mode: normal;
-  filter: brightness(10);
+@media (min-width: 991px) {
+  main .hero::before {
+    content: '';
+    background: url('/icons/palladium-care.svg');
+    width: 200px;
+    height: 175px;
+    background-size: cover;
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: 3%;
+    bottom: 10%;
+    margin: auto;
+    mix-blend-mode: normal;
+    filter: brightness(10);
+  }
 }
 
 main .hero h1 {
