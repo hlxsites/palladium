@@ -10,15 +10,38 @@ main .hero-container {
   
 main .hero {
   position: relative;
-  padding: 32px;
-  min-height: 300px;
+  padding: 0 80px;
+  min-height: 375px;
+  max-height: 800px;
+  height: 75vh;
+  background: radial-gradient(40% 100% at 10% 85%, rgba(24 20 9 / 80%) 0, rgba(24 20 9 / 0%) 100%);
+  opacity: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: var(--background-color);
+}
+
+main .hero::before {
+  content: '';
+  background: url('/icons/palladium-care.svg');
+  width: 200px;
+  height: 175px;
+  background-size: cover;
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: 3%;
+  bottom: 10%;
+  margin: auto;
+  mix-blend-mode: normal;
+  filter: brightness(10);
 }
 
 main .hero h1 {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
+  margin: 0 auto 70px;
+  color: var(--background-color);
 }
 
 main .hero picture {
@@ -36,4 +59,13 @@ main .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+main .hero p {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: var(--body-font-size-xs);
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-family: var(--body-light-font-family);
 }
