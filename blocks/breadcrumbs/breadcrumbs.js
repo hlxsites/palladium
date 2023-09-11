@@ -22,16 +22,16 @@ export default async function decorate(block) {
 
   breadcrumbs.push(
     ...pathSplit.slice(1, -1).map((part, index) => {
-      if (index > 2 ) {
+      if (index > 2) {
         const url = urlForIndex(index);
         return { name: getName(pageIndex, url), url_path: url };
-      }
+      } else return null;
     }),
     { name: getName(pageIndex, path) },
   );
 
   const ol = document.createElement('ol');
-  breadcrumbs.forEach((crumb, idx) => {
+  breadcrumbs.forEach((crumb) => {
     if (crumb) {
       const li = document.createElement('li');
       li.innerHTML = crumb.url_path ? `<a href='${crumb.url_path}'>${crumb.name}</a>` : crumb.name;
