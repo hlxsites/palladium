@@ -29,7 +29,8 @@ ul li {
 
 
 .footer-wrapper div div div:nth-last-child(2) ul{
- margin: 15px 70px;
+  column-gap: 20px;
+  margin: 20px 45px;
 }
 
 .footer-wrapper div div div:last-child p{
@@ -39,5 +40,10 @@ font-size: 14px;
 font-family: 'Avenir-Book',sans-serif;
 padding: 0 8px;
 display: inline-block;
-margin: 10px 45px;
+margin: 10px 50px;
+}
+
+.footer-wrapper div div div:last-child ul li{
+  font-size: 10px;
+  margin: 5px 10px;
 }
