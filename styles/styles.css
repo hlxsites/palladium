@@ -135,7 +135,7 @@
   size-adjust: 90.28%;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 992px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
