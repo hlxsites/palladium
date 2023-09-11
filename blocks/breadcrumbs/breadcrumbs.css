@@ -1,0 +1,44 @@
+.section.breadcrumbs-container {
+  padding: 15px 32px;
+}
+
+.breadcrumbs ol {
+  padding-inline-start: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: var(--body-roman-font-family);
+  font-size: var(--body-font-size-xs);
+  color: var(--breadcrumbs-color);
+}
+
+.breadcrumbs ol li:not(:first-of-type) {
+  margin-left: 5px;
+}
+
+.breadcrumbs ol li:last-of-type {
+  padding-top: 3px;
+  font-weight: bold;
+}
+
+.breadcrumbs ol li::before {
+  background: none;
+}
+
+.breadcrumbs ol li:last-of-type::after {
+  background: none;
+}
+
+.breadcrumbs ol li:not(:last-of-type)::after {
+  background: url('/icons/chevron-right-regular-aea780.svg') no-repeat;
+  height: 15px;
+  width: 30px;
+  content: '';
+  margin-left: 15px;
+  color: var(--heading-color);
+  display: inline-block;
+  transform: translateY(3px);
+}
+
+.breadcrumbs ol li a {
+  color: var(--breadcrumbs-color);
+}
