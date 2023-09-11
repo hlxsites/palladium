@@ -25,7 +25,7 @@ export default async function decorate(block) {
       if (index > 2) {
         const url = urlForIndex(index);
         return { name: getName(pageIndex, url), url_path: url };
-      } else return null;
+      } return null;
     }),
     { name: getName(pageIndex, path) },
   );
