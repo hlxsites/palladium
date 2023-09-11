@@ -1,3 +1,7 @@
+.cards {
+  font-size: var(--body-font-size-s);
+}
+
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -7,17 +11,13 @@
   grid-gap: 16px;
 }
 
-.cards > ul > li {
-  border: 1px solid var(--highlight-background-color);
-  background-color: var(--background-color)
-}
-
 .cards .cards-card-body {
   margin: 16px;
 }
 
 .cards .cards-card-image {
   line-height: 0;
+  height: 200px;
 }
 
 .cards .cards-card-body > *:first-child {
@@ -26,6 +26,6 @@
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
+  max-width: 200px;
 }
