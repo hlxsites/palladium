@@ -20,6 +20,7 @@
   --text-color: #3D3D3D;
   --heading-color: #AEA780;
   --breadcrumbs-color: #666;
+  --transparent-black: rgb(0 0 0 / 30%);
 
   /* fonts */
   --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
@@ -43,8 +44,7 @@
   --heading-font-size-xs: 16px;
 
   /* nav height */
-  --nav-height: 64px;
-
+  --nav-height: 80px;
 }
 
 @font-face {
@@ -162,6 +162,9 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  position: fixed;
+  z-index: 99;
+  top: 0;
 }
 
 h1, h2, h3,
