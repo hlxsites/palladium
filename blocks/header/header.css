@@ -219,28 +219,30 @@ header .nav-sections > ul > li:first-child {
 @media (min-width: 900px) {
   header .nav-sections > ul > li:first-child {
     display: block;
+    background: url("/icons/checkin.svg") no-repeat;
+    text-indent: 23px;
   }
 }
 
 header .nav-sections > ul > li:nth-child(2) {
-  background: url("/icons/phone.svg") no-repeat;
-  background-size: cover;
-  text-indent: -1000px;
-  height: 24px;
-  width: 27px;
-  position: absolute;
-  right: 69px;
-  top: 28px;
-}
-
-header .nav-sections > ul > li:nth-child(3) {
   background: url("/icons/guest_icon_white.svg") no-repeat;
   background-size: cover;
   text-indent: -1000px;
   height: 24px;
   width: 21px;
   position: absolute;
-  right: 110px;
+  right: 112px;
+  top: 28px;
+}
+
+header .nav-sections > ul > li:nth-child(3) {
+  background: url("/icons/phone.svg") no-repeat;
+  background-size: cover;
+  text-indent: -1000px;
+  height: 24px;
+  width: 27px;
+  position: absolute;
+  right: 72px;
   top: 28px;
 }
 
