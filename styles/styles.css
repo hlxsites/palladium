@@ -47,6 +47,12 @@
   --nav-height: 80px;
 }
 
+@media (min-width: 992px) {
+  :root {
+    --nav-height: 72px;
+  }
+}
+
 @font-face {
   font-family: 'Avenir-Roman Fallback';
   font-style: normal;
