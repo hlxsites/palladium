@@ -15,12 +15,35 @@ footer .footer p {
   margin: 0;
 }
 
+.footer div div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer div div:nth-child(1){
+  width: 100%;
+}
+.footer div div:nth-child(2){
+  width: 40%;
+}
+.footer div div:nth-child(3){
+  width: 60%;
+}
+.footer div div:nth-child(4){
+  width: 40%;
+}
+.footer div div:nth-child(5){
+  width: 60%;
+}
+
+
 footer ul {
   list-style: none; 
   padding: 0;       
   margin: 0;       
   display: flex; 
   flex-wrap: wrap; 
+  width: 100%;
 }
 
 ul li {
@@ -41,10 +64,94 @@ font-size: 14px;
 font-family: 'Avenir-Book',sans-serif;
 padding: 0 8px;
 display: inline-block;
-margin: 10px 50px;
+margin: 10px 10px;
 }
 
 .footer-wrapper div div div:last-child ul li{
   font-size: 10px;
   margin: 5px 10px;
+}
+
+.footer-wrapper div div div:last-child ul li a {
+  font-family: 'Avenir-Book',sans-serif;
+    border-right: 0;
+    padding: 0 8px;
+    display: inline-block;
+    margin: 5px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #3d3d3d;
+}
+
+
+
+.footer div div:nth-child(1) .icon svg{
+  height: 80px;
+  width: 80px;
+}
+
+.footer div div:nth-child(1) > ul > li {
+  width: 31.33%;
+}
+
+
+.footer div div:nth-child(1)  ul  li > ul > li  {
+  width: 19%;
+}
+
+.footer div div h4 span { 
+  display: block;
+  margin: auto;
+  padding: 100px 200px 100px 0px;
+}
+.footer div div:nth-child(2) h4{
+  font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    color: #3d3d3d;
+    font-family: "Avenir-Medium";
+    width: 100%;
+}
+
+.footer div div:nth-child(3){
+  margin-left: 450px;
+}
+
+
+.footer div div:nth-child(4){
+  margin-left: 960px;
+}
+.footer div div:nth-child(3)  ul  li > ul   {
+  flex-direction: column;
+}
+
+.footer div div:nth-child(3)  ul  li > ul li a {
+  font-family: 'Avenir-medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    color: #3d3d3d;
+    margin: 10px 0px 16px -20px;
+    text-decoration: none;
+}
+
+.footer div div:nth-child(3)  ul  li{
+  font-family: 'Avenir-Roman',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    color: #3d3d3d;
+    padding-left: 10px;
+    
 }
