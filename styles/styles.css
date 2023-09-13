@@ -26,6 +26,7 @@
   --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
   --body-roman-font-family: 'Avenir-Roman', 'Avenir-Roman Fallback', sans-serif;
   --body-light-font-family: 'Avenir-Light', 'Avenir-Light Fallback', sans-serif;
+  --body-book-font-family: 'Avenir-Book', 'Avenir-Book Fallback', sans-serif;
   --heading-font-family: 'Vanitas-Regular', 'Vanitas-Regular Fallback', sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
@@ -184,12 +185,32 @@ h4, h5, h6 {
   color: var(--heading-color);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-l) }
-h3 { font-size: var(--heading-font-size-s) }
-h4 { font-size: var(--heading-font-size-xs) }
-h5 { font-size: var(--heading-font-size-xs) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 { 
+  font-size: var(--heading-font-size-xxl) 
+}
+
+h2 { 
+  font-size: var(--heading-font-size-l);
+  margin-top: 10px;
+}
+
+h3 { 
+  font-size: var(--heading-font-size-xs);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+}
+
+h4 { 
+  font-size: var(--heading-font-size-xs) 
+}
+
+h5 { 
+  font-size: var(--heading-font-size-xs) 
+}
+
+h6 { 
+  font-size: var(--heading-font-size-xs) 
+}
 
 p, dl, ol, ul, pre, blockquote {
   margin: 0 0 10px;
@@ -369,4 +390,34 @@ main .section.highlight {
 
 main .section.highlight h2 {
   margin-top: 0;
+}
+
+.organisation main > div > div.default-content-wrapper:first-of-type p:first-child {
+  width: 200px;
+}
+
+@media (max-width:991px) {
+  .organisation main > div > div.default-content-wrapper:first-of-type p:first-child {
+    margin: 0 auto;
+  }
+
+  .organisation main .section.columns-container {
+    padding-top: 0;
+  }
+}
+
+@media (min-width:992px) {
+  .organisation main > div > div.default-content-wrapper:first-of-type {
+    position: relative;
+  }
+
+  .organisation main > div > div.default-content-wrapper:first-of-type * {
+    max-width: 85%;
+  }
+
+  .organisation main > div > div.default-content-wrapper:first-of-type p:first-child {
+    position: absolute;
+    top: 50px;
+    right: 0;
+  }
 }
