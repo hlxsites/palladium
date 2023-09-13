@@ -30,12 +30,13 @@ footer .footer p {
 
 .footer div div:nth-child(3) {
   width: 60%;
-  margin-left: 1025px;
   margin-top: -25px;
+  margin-left: 620px;
 }
 
 .footer div div:nth-child(4) {
-  width: 40%;
+  margin-left: 1000px;
+  margin-bottom: -90px;
 }
 
 .footer div div:nth-child(5) {
@@ -67,10 +68,26 @@ ul li {
   color: #666;
   font-weight: bold;
   font-size: 14px;
-  font-family: 'Avenir-Book', sans-serif;
+  font-family:sans-serif;
   padding: 0 8px;
   display: inline-block;
-  margin: 10px 10px;
+  margin: 10px;
+}
+
+.footer div div:nth-child(1)>ul>li {
+  width: 31.33%;
+}
+
+.footer div div:nth-child(3) ul li {
+  font-family: Avenir-Roman, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  align-items: center;
+  color: #3d3d3d;
+  padding-left: 10px;
+
 }
 
 .footer-wrapper div div div:last-child ul li {
@@ -79,7 +96,7 @@ ul li {
 }
 
 .footer-wrapper div div div:last-child ul li a {
-  font-family: 'Avenir-Book', sans-serif;
+  font-family: Avenir-Book, sans-serif;
   border-right: 0;
   padding: 0 8px;
   display: inline-block;
@@ -98,8 +115,17 @@ ul li {
   width: 80px;
 }
 
-.footer div div:nth-child(1)>ul>li {
-  width: 31.33%;
+.footer div div:nth-child(3) ul li>ul li a {
+  font-family: Avenir-Medium,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #3d3d3d;
+  margin: 10px 0 16px -20px;
+  text-decoration: none;
 }
 
 
@@ -110,7 +136,7 @@ ul li {
 .footer div div h4 span {
   display: block;
   margin: auto;
-  padding: 100px 200px 100px 0px;
+  padding: 100px 200px 100px 0;
 }
 
 .footer div div:nth-child(2) h4 {
@@ -122,45 +148,13 @@ ul li {
   display: flex;
   align-items: center;
   color: #3d3d3d;
-  font-family: "Avenir-Medium";
+  font-family:Avenir-Medium,sans-serif;
   width: 70%;
-}
-
-.footer div div:nth-child(3) {
-  margin-left: 620px;
-}
-
-
-.footer div div:nth-child(4) {
-  margin-left: 1000px;
-  margin-bottom: -90px;
 }
 
 .footer div div:nth-child(3) ul li>ul {
   flex-direction: column;
 }
 
-.footer div div:nth-child(3) ul li>ul li a {
-  font-family: 'Avenir-medium';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  color: #3d3d3d;
-  margin: 10px 0px 16px -20px;
-  text-decoration: none;
-}
 
-.footer div div:nth-child(3) ul li {
-  font-family: 'Avenir-Roman', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
-  align-items: center;
-  color: #3d3d3d;
-  padding-left: 10px;
 
-}
