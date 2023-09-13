@@ -129,7 +129,6 @@ async function loadLazy(doc) {
   sampleRUM.observe(main.querySelectorAll('picture > img'));
 }
 
-
 /**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
