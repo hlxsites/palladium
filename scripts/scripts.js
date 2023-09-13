@@ -158,6 +158,8 @@ export function getEnvType(hostname = window.location.hostname) {
     'www.palladiumhotelgroup.com': 'live',
     'main--palladium--hlxsites.hlx.page': 'preview',
     'main--palladium--hlxsites.hlx.live': 'live',
+    '28-analytics--palladium--hlxsites.hlx.live': 'live',
+    '28-analytics--palladium--hlxsites.hlx.live': 'live',
   };
   return fqdnToEnvType[hostname] || 'dev';
 }
