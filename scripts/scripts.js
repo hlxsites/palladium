@@ -22,9 +22,11 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
  * @param {Element} main The container element
  */
 function buildBreadcrumbsBlock(main) {
-  const section = document.createElement('div');
-  section.append(buildBlock('breadcrumbs', { elems: [] }));
-  main.prepend(section);
+  if (getMetadata('theme') !== 'fragment') {
+    const section = document.createElement('div');
+    section.append(buildBlock('breadcrumbs', { elems: [] }));
+    main.prepend(section);
+  }
 }
 
 /**
@@ -32,14 +34,16 @@ function buildBreadcrumbsBlock(main) {
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  const p = document.createElement('p');
-  p.textContent = getMetadata('hero-subtitle');
-  const h1 = document.createElement('h1');
-  h1.textContent = getMetadata('h1');
-  const picture = createOptimizedPicture(getMetadata('hero-picture'), 'Hero banner', true);
-  const section = document.createElement('div');
-  section.append(buildBlock('hero', { elems: [picture, p, h1] }));
-  main.prepend(section);
+  if (getMetadata('theme') !== 'fragment') {
+    const p = document.createElement('p');
+    p.textContent = getMetadata('hero-subtitle');
+    const h1 = document.createElement('h1');
+    h1.textContent = getMetadata('h1');
+    const picture = createOptimizedPicture(getMetadata('hero-picture'), 'Hero banner', true);
+    const section = document.createElement('div');
+    section.append(buildBlock('hero', { elems: [picture, p, h1] }));
+    main.prepend(section);
+  }
 }
 
 /**
