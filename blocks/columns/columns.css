@@ -39,6 +39,16 @@
   display: block;
 }
 
+@media (max-width: 991px) {
+  .columns > div > .columns-img-col {
+    margin-bottom: 25px;
+  }
+
+  .columns > div {
+    margin-bottom: 60px;
+  }
+}
+
 @media (min-width: 992px) {
   .columns > div {
     align-items: start;
