@@ -176,19 +176,32 @@ h4, h5, h6 {
   color: var(--heading-color);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
+h1 { 
+  font-size: var(--heading-font-size-xxl) 
+}
+
 h2 { 
   font-size: var(--heading-font-size-l);
   margin-top: 10px;
 }
+
 h3 { 
   font-size: var(--heading-font-size-xs);
   color: var(--text-color);
   font-family: var(--body-font-family);
 }
-h4 { font-size: var(--heading-font-size-xs) }
-h5 { font-size: var(--heading-font-size-xs) }
-h6 { font-size: var(--heading-font-size-xs) }
+
+h4 { 
+  font-size: var(--heading-font-size-xs) 
+}
+
+h5 { 
+  font-size: var(--heading-font-size-xs) 
+}
+
+h6 { 
+  font-size: var(--heading-font-size-xs) 
+}
 
 p, dl, ol, ul, pre, blockquote {
   margin: 0 0 10px;

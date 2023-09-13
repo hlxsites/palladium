@@ -14,6 +14,10 @@
   margin-bottom: 100px;
 }
 
+.columns > div > div {
+  order: 1;
+}
+
 .columns > div:last-of-type {
   margin-bottom: 0;
 }
@@ -24,10 +28,6 @@
 
 .columns h2 {
   margin-top: -10px;
-}
-
-.columns > div > div {
-  order: 1;
 }
 
 .columns > div > .columns-img-col {
