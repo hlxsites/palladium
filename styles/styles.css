@@ -25,6 +25,7 @@
   --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
   --body-roman-font-family: 'Avenir-Roman', 'Avenir-Roman Fallback', sans-serif;
   --body-light-font-family: 'Avenir-Light', 'Avenir-Light Fallback', sans-serif;
+  --body-book-font-family: 'Avenir-Book', 'Avenir-Book Fallback', sans-serif;
   --heading-font-family: 'Vanitas-Regular', 'Vanitas-Regular Fallback', sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
@@ -176,8 +177,15 @@ h4, h5, h6 {
 }
 
 h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-l) }
-h3 { font-size: var(--heading-font-size-s) }
+h2 { 
+  font-size: var(--heading-font-size-l);
+  margin-top: 10px;
+}
+h3 { 
+  font-size: var(--heading-font-size-xs);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+}
 h4 { font-size: var(--heading-font-size-xs) }
 h5 { font-size: var(--heading-font-size-xs) }
 h6 { font-size: var(--heading-font-size-xs) }
