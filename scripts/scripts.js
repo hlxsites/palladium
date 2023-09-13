@@ -25,6 +25,7 @@ function buildBreadcrumbsBlock(main) {
   if (getMetadata('theme') !== 'fragment') {
     const section = document.createElement('div');
     section.append(buildBlock('breadcrumbs', { elems: [] }));
+    section.classList.add('autoblock');
     main.prepend(section);
   }
 }
@@ -42,6 +43,7 @@ function buildHeroBlock(main) {
     const picture = createOptimizedPicture(getMetadata('hero-picture'), 'Hero banner', true);
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, p, h1] }));
+    section.classList.add('autoblock');
     main.prepend(section);
   }
 }

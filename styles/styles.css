@@ -363,6 +363,8 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
   padding: 25px 0;
   text-align: center;
+  margin-top: 10px;
+  margin-top: 10px;
 }
 
 main .section.highlight h2 {
