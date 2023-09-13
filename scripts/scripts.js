@@ -149,4 +149,19 @@ async function loadPage() {
   loadDelayed();
 }
 
+/*
+  * Returns the environment type based on the hostname.
+*/
+export function getEnvType(hostname = window.location.hostname) {
+  const fqdnToEnvType = {
+    'palladiumhotelgroup.com': 'live',
+    'www.palladiumhotelgroup.com': 'live',
+    'main--palladium--hlxsites.hlx.page': 'preview',
+    'main--palladium--hlxsites.hlx.live': 'live',
+    '28-analytics--palladium--hlxsites.hlx.page': 'preview',
+    '28-analytics--palladium--hlxsites.hlx.live': 'live',
+  };
+  return fqdnToEnvType[hostname] || 'dev';
+}
+
 loadPage();
