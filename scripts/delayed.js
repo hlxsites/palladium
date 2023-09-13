@@ -51,5 +51,7 @@ async function loadGA() {
   });
 }
 
-await loadGTM();
-await loadGA();
+if (getEnvType() === 'live') {
+  await loadGTM();
+  await loadGA();
+}
