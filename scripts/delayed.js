@@ -44,7 +44,7 @@ function loadGAScript(url, callback) {
 }
 
 async function loadGA() {
-  const gaId = 'UA-150288508-1';
+  const gaId = 'G-Q7JCVTBTKM';
   loadGAScript(`https://www.googletagmanager.com/gtag/js?id=${gaId}`, () => {
   // eslint-disable-next-line
     window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', gaId); ga('send', 'pageview'); ga('create', gaId, 'auto');
