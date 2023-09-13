@@ -22,7 +22,7 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
  * @param {Element} main The container element
  */
 function buildBreadcrumbsBlock(main) {
-  if (getMetadata('theme') != 'fragment') {
+  if (getMetadata('theme') !== 'fragment') {
     const section = document.createElement('div');
     section.append(buildBlock('breadcrumbs', { elems: [] }));
     main.prepend(section);
@@ -34,7 +34,7 @@ function buildBreadcrumbsBlock(main) {
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  if (getMetadata('theme') != 'fragment') {
+  if (getMetadata('theme') !== 'fragment') {
     const p = document.createElement('p');
     p.textContent = getMetadata('hero-subtitle');
     const h1 = document.createElement('h1');
