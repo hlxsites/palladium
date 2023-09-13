@@ -28,6 +28,8 @@ footer .footer p {
 }
 .footer div div:nth-child(3){
   width: 60%;
+  margin-left: 1025px;
+  margin-top: -25px;
 }
 .footer div div:nth-child(4){
   width: 40%;
@@ -111,12 +113,12 @@ margin: 10px 10px;
     font-weight: bold;
     font-size: 18px;
     line-height: 20px;
-    margin-top: 0;
+    margin-bottom: -15px;
     display: flex;
     align-items: center;
     color: #3d3d3d;
     font-family: "Avenir-Medium";
-    width: 100%;
+    width: 60%;
 }
 
 .footer div div:nth-child(3){
@@ -125,7 +127,8 @@ margin: 10px 10px;
 
 
 .footer div div:nth-child(4){
-  margin-left: 960px;
+  margin-left: 1520px;
+  margin-bottom: -90px;
 }
 .footer div div:nth-child(3)  ul  li > ul   {
   flex-direction: column;
