@@ -30,9 +30,10 @@ export default async function decorate(block) {
     formTitle.after(input);
     const button = footer.querySelector('.center a.button');
     button.classList.add('disabled');
-    const href = button.href;
-    
+    const { href : href } = button;
+
     input.addEventListener('keyup', (event) => {
+      // eslint-disable-next-line no-useless-escape
       if (event.target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) button.classList.remove('disabled');
       else button.classList.add('disabled');
       button.href = `${href}${event.target.value}`;
