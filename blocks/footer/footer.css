@@ -7,16 +7,16 @@
   flex-wrap: wrap;
 }
 
-.footer .top ul li ul {
-  transform: translateY(-60px);
-}
-
 .footer .center {
   background-color: var(--highlight-footer-background-color);
 }
 
 .footer .center ul {
   justify-content: end;
+}
+
+.footer .top ul li ul {
+  transform: translateY(-60px);
 }
 
 @media (min-width: 992px) {
@@ -26,10 +26,6 @@
     flex-wrap: wrap;
   }
 
-  .footer .center > div > div:first-of-type {
-    width: 32%;
-  }
-
   .footer .center ul li {
     width: 146px;
   }
@@ -37,5 +33,9 @@
   .footer .bottom > div {
     justify-content: space-between;
     align-items: center;
+  }
+
+  .footer .center > div > div:first-of-type {
+    width: 32%;
   }
 }
