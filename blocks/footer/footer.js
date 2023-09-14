@@ -1,4 +1,4 @@
-import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
+import { readBlockConfig, decorateIcons, decorateButtons } from '../../scripts/lib-franklin.js';
 
 /**
  * loads and decorates the footer
@@ -19,7 +19,14 @@ export default async function decorate(block) {
     const footer = document.createElement('div');
     footer.innerHTML = html;
 
+    const formTitle = footer.querySelector('.center > div > div > h4');
+    const input = document.createElement('input');
+    input.setAttribute('type', 'email');
+    input.setAttribute('placeholder', 'Email');
+    formTitle.after(input);
+
     decorateIcons(footer);
+    decorateButtons(footer);
     block.append(footer);
   }
 }
