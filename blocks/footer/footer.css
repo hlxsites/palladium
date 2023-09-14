@@ -42,16 +42,16 @@
   margin: 20px 5px;
 }
 
-.footer .top h4 > .icon,
-.footer .top ul li .icon {
-  filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%);
-  opacity: 0.8;
-}
-
 .footer .top h4 > .icon {
   width: 275px;
   height: 90px;
   transform: translateY(25px);
+}
+
+.footer .top h4 > .icon,
+.footer .top ul li .icon {
+  filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%);
+  opacity: 0.8;
 }
 
 .footer .top h4 > .icon:hover,
@@ -89,6 +89,10 @@
 
 .footer .bottom a:hover {
   color: var(--link-hover-color-light);
+}
+
+.footer .center a:hover {
+  text-decoration: none;
 }
 
 .footer .bottom ul li:first-of-type a {
@@ -131,10 +135,6 @@
   pointer-events: none;
   cursor: default;
   opacity: 0.5;
-}
-
-.footer .center a:hover {
-  text-decoration: none;
 }
 
 .footer .center ul {
