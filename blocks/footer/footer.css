@@ -22,8 +22,7 @@
 } 
 
 .footer h4 {
-  font-weight: bold;
-  font-size: 18px;
+  font-size: var(--heading-font-size-xs);
   font-family: var(--body-font-family);
   color: var(--text-color);
 }
@@ -33,7 +32,7 @@
 }
 
 .footer .bottom .icon {
-  width:35px;
+  width: 35px;
   height: 35px;
 }
 
@@ -78,13 +77,23 @@
   margin: 0 10px;
 }
 
+.footer .bottom ul li:first-of-type a {
+  margin-left: 0;
+}
+
+.footer .bottom > div > div:first-of-type > ul li:not(:first-of-type)::before {
+  content: '•';
+  font-size: 75%;
+}
+
 .footer .bottom a:hover {
-  color: #999;
+  color: var(--link-hover-color-light);
 }
 
 .footer .center input {
-  background: #fff;
-  border: 1px solid #aea780;
+  background: var(--background-color);
+  border: 1px solid var(--heading-color);
+  box-sizing: border-box;
   width: 100%;
   padding: 23px 12px;
   font-style: normal;
@@ -93,6 +102,16 @@
   line-height: 18px;
   color: var(--breadcrumbs-color);
   margin: 15px 0;
+}
+
+.footer .center .button {
+  width: 100%;
+}
+
+.footer .center .button.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
 }
 
 .footer .center a:hover {
@@ -152,19 +171,32 @@
 }
 
 @media (max-width: 991px) {
-  .bottom {
+  .footer .bottom {
     text-align: center;
   }
 
-  .center ul {
+  .footer .center {
+    padding: 0;
+  }
+
+  .footer .center ul {
     display: block;
   }
 
-  .center ul ul {
+  .footer .center ul ul {
     display: none;
   }
 
-  .center > div > div > ul > li {
+  .footer .center > div > div:first-of-type {
+    background-color: var(--background-color);
+    padding: 54px 15px 0;
+  }
+
+  .footer .center > div > div:nth-of-type(2) {
+    padding: 0 15px;
+  }
+
+  .footer .center > div > div > ul > li {
     padding: 10px 0;
   }
 }
