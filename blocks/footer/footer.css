@@ -60,6 +60,7 @@
 .footer .top > div:nth-of-type(2) {
   overflow: scroll;
   padding-bottom: 15px;
+  
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none;
