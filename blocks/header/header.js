@@ -86,13 +86,43 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Open the sidebar on click of hamburger
+ */
+function hamburgerClicked(block) {
+  const hamburger = block.querySelector('.nav-hamburger');
+
+  hamburger.addEventListener('click', () => {
+    const sidebar = block.querySelector('.nav-sidebar-new');
+    const isSidebarOpen = sidebar.classList.contains('open');
+    if (!isSidebarOpen) {
+      sidebar.classList.add('open');
+    }
+  });
+}
+
+/**
+ * Close the sidebar on click of close
+ */
+function hamburgerClose(block) {
+  const sidebar = block.querySelector('.nav-sidebar-new');
+  const closeBtn = block.querySelector('header nav .icon.icon-close');
+
+  closeBtn.addEventListener('click', () => {
+    const isSidebarOpen = sidebar.classList.contains('open');
+    if (isSidebarOpen) {
+      sidebar.classList.remove('open');
+    }
+  });
+}
+
+/**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
   // fetch nav content
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta).pathname : '/drafts/thomas/nav';
   const resp = await fetch(`${navPath}.plain.html`);
 
   if (resp.ok) {
@@ -103,7 +133,7 @@ export default async function decorate(block) {
     nav.id = 'nav';
     nav.innerHTML = html;
 
-    const classes = ['menu', 'brand', 'sections', 'tools'];
+    const classes = ['menu', 'brand', 'sections', 'sidebar-new'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
@@ -141,5 +171,8 @@ export default async function decorate(block) {
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
     block.append(navWrapper);
+
+    hamburgerClicked(block);
+    hamburgerClose(block);
   }
 }
