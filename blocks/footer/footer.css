@@ -53,6 +53,7 @@
 
 .footer .top h4 > .icon,
 .footer .top ul li .icon {
+  
   /* filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%); */
   /* opacity: 0.8; */
 }
