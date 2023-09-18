@@ -261,6 +261,11 @@
     transition: height 0.3s ease-in-out 0.2s;
   }
 
+  .footer .top > div:nth-child(2) .icon {
+    height: 80px;
+    margin-right: 200px;
+  }
+
   .footer .center > div > div:first-of-type {
     background-color: var(--background-color);
     padding: 54px 15px 0;
