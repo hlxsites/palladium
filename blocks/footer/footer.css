@@ -53,9 +53,8 @@
 
 .footer .top h4 > .icon,
 .footer .top ul li .icon {
-  
-  /* filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%); */
-  /* opacity: 0.8; */
+  filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%);
+  opacity: 0.8;
 }
 
 .footer .top > div:nth-of-type(2) {
@@ -74,18 +73,18 @@
 
 .footer .top h4 > .icon:hover,
 .footer .top ul li .icon:hover {
-  /* filter: none; */
+  filter: none;
   opacity: 1;
 }
 
 .footer .top h4 > .icon svg,
 .footer .top ul li .icon svg {
-  /* filter: grayscale(1); */
+  filter: grayscale(1);
 }
 
 .footer .top h4 > .icon:hover svg,
 .footer .top ul li .icon:hover svg {
-  /* filter: none; */
+  filter: none;
 }
 
 .footer .center {
