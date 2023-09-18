@@ -38,5 +38,19 @@ export default async function decorate(block) {
       else button.classList.add('disabled');
       button.href = `${href}${event.target.value}`;
     });
+
+    const lis = footer.querySelectorAll('.center > div > div > ul > li');
+    [...lis].forEach((li) => {
+      li.addEventListener('click', () => {
+        const ul = li.querySelector('ul');
+        if (li.classList.contains('active')) {
+          ul.style.height = '0';
+          li.classList.remove('active');
+        } else {
+          ul.style.height = `${(ul.querySelector('li').offsetHeight*ul.childElementCount) + 10}px`;
+          li.classList.add('active');
+        }
+      })
+    });
   }
 }

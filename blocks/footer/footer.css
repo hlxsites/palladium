@@ -117,7 +117,7 @@
 }
 
 .footer .bottom > div > div:first-of-type li a {
-  margin: 0 10px;
+  margin: 0 10px 0 0;
 }
 
 
@@ -159,7 +159,7 @@
   font-size: var(--body-font-size-s);
 }
 
-.footer .center ul li {
+.footer .center ul li ul li {
   margin-bottom: 13px;
 }
 
@@ -191,6 +191,10 @@
   .footer .center ul li {
     width: 146px;
     margin-right: 16px;
+  }
+
+  .footer .center .button {
+    width: 75%;
   }
 
   .footer .bottom > div {
@@ -234,7 +238,10 @@
   }
 
   .footer .center ul ul {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: height 0.3s ease-in-out 0.2s;
   }
 
   .footer .center > div > div:first-of-type {
@@ -248,6 +255,19 @@
 
   .footer .center > div > div > ul > li {
     padding: 10px 0;
+    position: relative;
+  }
+
+  .footer .center > div > div > ul > li::after {
+    content: '';
+    background: url('/icons/chevron-down-regular-705407.svg') no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 
   .footer .bottom > div > div:nth-child(1) {
