@@ -46,6 +46,12 @@
   margin: 18px 5px 28px;
 }
 
+.footer .top ul li .icon,
+.footer .top > div:nth-child(1) em > .icon {
+  filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%);
+  opacity: 0.8;
+}
+
 .footer .top div:nth-child(1) em > .icon {
   width: 270px;
   height: 83px;
@@ -56,12 +62,6 @@
   top: 115px;
   font-style: normal;
   text-transform: uppercase;
-}
-
-.footer .top ul li .icon,
-.footer .top > div:nth-child(1) em > .icon {
-  filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%);
-  opacity: 0.8;
 }
 
 .footer .top > div:nth-of-type(2) {
