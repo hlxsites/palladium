@@ -124,14 +124,16 @@
 }
 
 .footer .bottom > div > div:first-of-type li a {
-  margin: 0 10px 0 0;
+  margin: 20px;
 }
 
+.footer .bottom > div > div:first-of-type li:first-of-type a {
+  margin-left: 0;
+}
 
 .footer .bottom > div > div:first-of-type > ul li:not(:first-of-type)::before {
   content: '•';
   font-size: 75%;
-  margin-right: 9px;
 }
 
 .footer .bottom > div > div > p {
