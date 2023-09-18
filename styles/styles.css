@@ -12,7 +12,7 @@
 
  :root {
   /* colors */
-  --link-color: #ec7205;
+  --link-color: #8A4305;
   --link-hover-color: #154259;
   --link-hover-color-light: #999;
   --background-color: #fff;
@@ -22,6 +22,7 @@
   --heading-color: #705407;
   --breadcrumbs-color: #666;
   --transparent-black: rgb(0 0 0 / 30%);
+  --min-contrast-grey: #595959;
 
   /* fonts */
   --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
