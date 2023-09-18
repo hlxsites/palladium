@@ -105,14 +105,40 @@ function hamburgerClicked(block) {
  */
 function hamburgerClose(block) {
   const sidebar = block.querySelector('.nav-sidebar-new');
-  const closeBtn = block.querySelector('header nav .icon.icon-close');
+  const closeBtn = block.querySelector('header nav .nav-sidebar-new .icon.icon-close');
 
   closeBtn.addEventListener('click', () => {
     const isSidebarOpen = sidebar.classList.contains('open');
     if (isSidebarOpen) {
       sidebar.classList.remove('open');
+      document.body.style = '';
     }
   });
+}
+
+function closeLanguageNavOnClickOutside(globe) {
+  document.addEventListener('click', (event) => {
+    const target = event.target.closest('li.active');
+    if (target !== globe || !target) {
+      globe.classList.remove('active');
+    }
+  });
+}
+
+function toggleLanguageNav(block) {
+  const languageToggleEl = block.querySelector('.nav-sidebar-new > ul li:last-child');
+  const ACTIVE = 'active';
+
+  languageToggleEl.addEventListener('click', () => {
+    const isActive = languageToggleEl.classList.contains(ACTIVE);
+    if (isActive) {
+      languageToggleEl.classList.remove(ACTIVE);
+    } else {
+      languageToggleEl.classList.add(ACTIVE);
+    }
+  });
+
+  closeLanguageNavOnClickOutside(languageToggleEl);
 }
 
 /**
@@ -174,5 +200,6 @@ export default async function decorate(block) {
 
     hamburgerClicked(block);
     hamburgerClose(block);
+    toggleLanguageNav(block);
   }
 }
