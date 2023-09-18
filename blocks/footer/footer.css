@@ -19,9 +19,11 @@
 }
 
 .footer h4 {
-  font-size: var(--heading-font-size-xs);
   font-family: var(--body-font-family);
   color: var(--text-color);
+  font-size: 22px;
+  margin: 0;
+  line-height: 20px;
 }
 
 .footer .top ul li {
@@ -34,19 +36,19 @@
 }
 
 .footer .top .icon {
-  width:90px;
-  height: 75px;
-  margin: 10px 5px;
+  height: 50px;
+  width: 100%;
+  margin: 18px 5px 28px;
 }
 
 .footer .top h4 > .icon {
-  width: 275px;
-  height: 90px;
+  width: 270px;
+  height: 83px;
 }
 
 .footer .top em {
   position: relative;
-  top: 112px;
+  top: 119px;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -60,6 +62,7 @@
 .footer .top > div:nth-of-type(2) {
   overflow: scroll;
   padding-bottom: 15px;
+  padding: 0 5px 40px;
 
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
@@ -124,6 +127,7 @@
 .footer .bottom > div > div:first-of-type > ul li:not(:first-of-type)::before {
   content: '•';
   font-size: 75%;
+  margin-right: 9px;
 }
 
 .footer .bottom > div > div > p {
@@ -146,6 +150,8 @@
 
 .footer .center .button {
   width: 100%;
+  margin-bottom: 25px;
+  margin-top: 15px;
 }
 
 .footer .center .button.disabled {
@@ -169,7 +175,7 @@
 }
 
 .footer .top > div:first-of-type {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   text-align: center;
   border-bottom: 1px solid var(--highlight-footer-background-color);
 }
@@ -182,6 +188,11 @@
 }
 
 @media (min-width: 992px) {
+  .footer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
   .footer .center > div,
   .footer .bottom > div {
     display: flex;
@@ -191,6 +202,10 @@
   .footer .center ul li {
     width: 146px;
     margin-right: 16px;
+  }
+
+  .footer .center > div > div > ul > li {
+    margin-bottom: 35px;
   }
 
   .footer .center .button {
@@ -211,12 +226,14 @@
   }
 
   .footer .top {
-    margin-bottom: 45px;
+    margin-bottom: 25px;
   }
 
   .footer .top h4 > .icon {
     width: 220px;
     height: 72px;
+    margin-top: 0;
+    margin-bottom: 19px;
   }
 }
 
