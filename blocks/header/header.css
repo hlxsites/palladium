@@ -499,6 +499,13 @@ header nav .nav-sidebar-new {
   width: 100%;
 }
 
+@media (min-width: 992px) {
+  header nav .nav-sidebar-new {
+    width: 19.5vw;
+    min-width: 459px;
+  }
+}
+
 header nav .nav-sidebar-new .icon-lid {
   display: none;
 }
