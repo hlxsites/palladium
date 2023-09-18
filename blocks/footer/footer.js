@@ -47,10 +47,10 @@ export default async function decorate(block) {
           ul.style.height = '0';
           li.classList.remove('active');
         } else {
-          ul.style.height = `${(ul.querySelector('li').offsetHeight*ul.childElementCount) + 10}px`;
+          ul.style.height = `${(ul.querySelector('li').offsetHeight * ul.childElementCount) + 10}px`;
           li.classList.add('active');
         }
-      })
+      });
     });
   }
 }
