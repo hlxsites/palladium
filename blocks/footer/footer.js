@@ -23,7 +23,7 @@ export default async function decorate(block) {
     decorateButtons(footer);
     block.append(footer);
 
-    const formTitle = footer.querySelector('.center > div > div > h4');
+    const formTitle = footer.querySelector('.center > div > div > p > strong');
     const input = document.createElement('input');
     input.setAttribute('type', 'email');
     input.setAttribute('placeholder', 'Email');
