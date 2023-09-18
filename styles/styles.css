@@ -12,11 +12,12 @@
 
  :root {
   /* colors */
-  --link-color: #ec7205;
+  --link-color: #8A4305;
   --link-hover-color: #154259;
+  --link-hover-color-light: #999;
   --background-color: #fff;
-  --overlay-background-color: #eee;
   --highlight-background-color: #FAFAF7;
+  --highlight-footer-background-color: #efede6;
   --text-color: #3D3D3D;
   --heading-color: #705407;
   --breadcrumbs-color: #666;
@@ -25,6 +26,7 @@
   --text-grey: #6d6d69;
   --text-gold: #aea780;
   --text-gold-dim: #8d8556;
+  --min-contrast-grey: #595959;
 
   /* fonts */
   --body-font-family: 'Avenir-Medium', 'Avenir-Medium Fallback', sans-serif;
@@ -390,7 +392,7 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
-  padding: 25px 0;
+  padding: 20px 0;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -398,6 +400,33 @@ main .section.highlight {
 
 main .section.highlight h2 {
   margin-top: 0;
+}
+
+main .section.highlight p {
+  font-size: 13px;
+}
+
+main .section.highlight h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  color: var(--heading-color);
+}
+
+main .section.highlight .button {
+  text-transform: uppercase;
+}
+
+main .section.apuntate-si p {
+  font-size: var(--body-font-size-m);
+}
+
+main .section.apuntate-si ul {
+  margin-bottom: 0;
+}
+
+main .section.apuntate-si ul+p {
+  font-family: var(--body-book-font-family);
+  margin-bottom: 25px;
 }
 
 .organisation main > div > div.default-content-wrapper:first-of-type p:first-child {
@@ -411,6 +440,7 @@ main .section.highlight h2 {
 
   .organisation main .section.columns-container {
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 

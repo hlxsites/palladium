@@ -1,14 +1,312 @@
-footer {
-  padding: 2rem;
-  background-color: var(--overlay-background-color);
-  font-size: var(--body-font-size-s);
+.footer {
+  font-size: var(--body-font-size-xs);
 }
 
-footer .footer {
-  max-width: 1200px;
+.footer .top > div,
+.footer .center > div,
+.footer .bottom > div {
+  max-width: 1440px;
   margin: auto;
 }
 
-footer .footer p {
+.footer a {
+  color: var(--text-color);
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer .top ul {
+  flex-wrap: nowrap;
+  margin-bottom: 0;
+}
+
+.footer h4 {
+  font-family: var(--body-font-family);
+  color: var(--text-color);
+  font-size: 22px;
   margin: 0;
+  line-height: 20px;
+}
+
+.footer .top ul li {
+  flex: 1;
+}
+
+.footer .bottom .icon {
+  width: 32px;
+  height: 32px;
+}
+
+.footer .top .icon {
+  height: 50px;
+  width: 100%;
+  margin: 18px 5px 28px;
+}
+
+.footer .top h4 > .icon {
+  width: 270px;
+  height: 83px;
+}
+
+.footer .top em {
+  position: relative;
+  top: 119px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.footer .top h4 > .icon,
+.footer .top ul li .icon {
+  filter: invert(65%) sepia(25%) saturate(321%) hue-rotate(13deg) brightness(97%) contrast(91%);
+  opacity: 0.8;
+}
+
+.footer .top > div:nth-of-type(2) {
+  overflow: scroll;
+  padding: 0 5px 40px;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.footer .top > div:nth-of-type(2)::-webkit-scrollbar {
+  display: none;
+}
+
+.footer .top h4 > .icon:hover,
+.footer .top ul li .icon:hover {
+  filter: none;
+  opacity: 1;
+}
+
+.footer .top h4 > .icon svg,
+.footer .top ul li .icon svg {
+  filter: grayscale(1);
+}
+
+.footer .top h4 > .icon:hover svg,
+.footer .top ul li .icon:hover svg {
+  filter: none;
+}
+
+.footer .center {
+  background-color: var(--highlight-footer-background-color);
+  padding: 54px 15px 0;
+}
+
+.footer .bottom {
+  padding: 15px;
+}
+
+.footer .bottom, .footer .bottom a {
+  color: var(--breadcrumbs-color);
+}
+
+.footer .bottom ul li a {
+  margin: 0 18px;
+}
+
+.footer .bottom a:hover {
+  color: var(--link-hover-color-light);
+}
+
+.footer .center a:hover {
+  text-decoration: none;
+}
+
+.footer .bottom ul li:first-of-type a {
+  margin-left: 0;
+}
+
+.footer .bottom > div > div:first-of-type li a {
+  margin: 0 10px 0 0;
+}
+
+
+.footer .bottom > div > div:first-of-type > ul li:not(:first-of-type)::before {
+  content: '•';
+  font-size: 75%;
+  margin-right: 9px;
+}
+
+.footer .bottom > div > div > p {
+  font-size: var(--body-font-size-s);
+}
+
+.footer .center input {
+  background: var(--background-color);
+  border: 1px solid var(--heading-color);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 23px 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--body-font-size-m);
+  line-height: 18px;
+  color: var(--breadcrumbs-color);
+  margin: 15px 0;
+}
+
+.footer .center .button {
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+.footer .center .button.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: var(--min-contrast-grey);
+}
+
+.footer .center ul {
+  justify-content: end;
+  font-size: var(--body-font-size-s);
+}
+
+.footer .center ul li ul li {
+  margin-bottom: 13px;
+}
+
+.footer .center ul li ul {
+  margin-top: 13px;
+  font-size: var(--body-font-size-xs);
+}
+
+.footer .top > div:first-of-type {
+  margin-bottom: 5px;
+  text-align: center;
+  border-bottom: 1px solid var(--highlight-footer-background-color);
+}
+
+.footer .top > div > div > ul > li {
+  border-bottom: 1px solid var(--highlight-footer-background-color);
+  padding-top: 3px;
+  margin-right: 10px;
+  font-size: 8px;
+}
+
+@media (min-width: 992px) {
+  .footer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .footer .center > div,
+  .footer .bottom > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer .center ul li {
+    width: 146px;
+    margin-right: 16px;
+  }
+
+  .footer .center > div > div > ul > li {
+    margin-bottom: 35px;
+  }
+
+  .footer .center .button {
+    width: 75%;
+  }
+
+  .footer .bottom ul li a {
+    margin: 0 10px;
+  }
+
+  .footer .bottom > div {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer .center > div > div:first-of-type {
+    flex-basis: 32%;
+  }
+
+  .footer .center > div > div:nth-of-type(2) {
+    flex-basis: 68%;
+  }
+
+  .footer .top {
+    margin-bottom: 25px;
+  }
+
+  .footer .top h4 > .icon {
+    width: 220px;
+    height: 72px;
+    margin-top: 0;
+    margin-bottom: 19px;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer .bottom {
+    text-align: center;
+  }
+
+  .footer .center {
+    padding: 0;
+  }
+
+  .footer .center ul {
+    display: block;
+  }
+
+  .footer .bottom ul {
+    justify-content: center;
+  }
+
+  .footer .center ul ul {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: height 0.3s ease-in-out 0.2s;
+  }
+
+  .footer .top > div:nth-child(2) .icon {
+    height: 80px;
+    margin-right: 200px;
+  }
+
+  .footer .center > div > div:first-of-type {
+    background-color: var(--background-color);
+    padding: 54px 15px 0;
+  }
+
+  .footer .center > div > div:nth-of-type(2) {
+    padding: 0 15px;
+  }
+
+  .footer .center > div > div > ul > li {
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .footer .center > div > div > ul > li::after {
+    content: '';
+    background: url('/icons/chevron-down-regular-705407.svg') no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .footer .bottom > div > div:nth-child(1) {
+    transform: translateY(50px);
+  }
+
+  .footer .bottom > div > div:nth-child(2) {
+    transform: translateY(-70px);
+  }
 }
