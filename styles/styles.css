@@ -33,6 +33,7 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
+  --body-font-size-xl: 22px;
   --body-font-size-l: 18px;
   --body-font-size-m: 16px;
   --body-font-size-s: 14px;
@@ -266,11 +267,9 @@ main pre {
 
 a:any-link {
   color: var(--link-color);
-  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
   color: var(--link-hover-color);
 }
 

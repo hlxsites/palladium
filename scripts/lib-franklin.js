@@ -227,6 +227,7 @@ export async function decorateIcons(element) {
     } else {
       parent.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"><use href="#icons-sprite-${iconName}"/></svg>`;
     }
+    if (span.parentElement.tagName === 'A' && !span.parentElement.title) span.parentElement.setAttribute('aria-label', iconName);
   });
 }
 
