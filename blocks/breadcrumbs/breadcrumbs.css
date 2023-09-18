@@ -17,10 +17,6 @@
   color: var(--breadcrumbs-color);
 }
 
-.breadcrumbs ol li {
-  background: none;
-}
-
 .breadcrumbs ol li:not(:first-of-type) {
   margin-left: 5px;
 }
@@ -28,6 +24,10 @@
 .breadcrumbs ol li:last-of-type {
   padding-top: 3px;
   font-weight: bold;
+}
+
+.breadcrumbs ol li::before {
+  background: none;
 }
 
 .breadcrumbs ol li:last-of-type::after {
@@ -41,6 +41,7 @@
   content: '';
   margin-left: 15px;
   color: var(--heading-color);
+  display: inline-block;
   transform: translateY(3px);
 }
 
