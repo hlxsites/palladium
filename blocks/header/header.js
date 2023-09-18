@@ -88,11 +88,11 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 /**
  * Open the sidebar on click of hamburger
  */
-function hamburgerClicked(block) {
-  const hamburger = block.querySelector('.nav-hamburger');
+function openSidebar(block, target = '.nav-hamburger', clsName = '.nav-sidebar-new') {
+  const hamburger = block.querySelector(target);
 
   hamburger.addEventListener('click', () => {
-    const sidebar = block.querySelector('.nav-sidebar-new');
+    const sidebar = block.querySelector(clsName);
     const isSidebarOpen = sidebar.classList.contains('open');
     if (!isSidebarOpen) {
       sidebar.classList.add('open');
@@ -103,9 +103,9 @@ function hamburgerClicked(block) {
 /**
  * Close the sidebar on click of close
  */
-function hamburgerClose(block) {
-  const sidebar = block.querySelector('.nav-sidebar-new');
-  const closeBtn = block.querySelector('header nav .nav-sidebar-new .icon.icon-close');
+function closeSidebar(block, clsName = '.nav-sidebar-new') {
+  const sidebar = block.querySelector(clsName);
+  const closeBtn = block.querySelector(`header nav ${clsName} .icon.icon-close`);
 
   closeBtn.addEventListener('click', () => {
     const isSidebarOpen = sidebar.classList.contains('open');
@@ -141,6 +141,14 @@ function toggleLanguageNav(block) {
   closeLanguageNavOnClickOutside(languageToggleEl);
 }
 
+function decorateSecondarySidebar(block) {
+  const sidebarUlEl = block.querySelector('.nav-sections ul li:last-child ul');
+  sidebarUlEl?.classList.add('nav-sidebar-phone');
+
+  openSidebar(block, '.nav-sections .icon.icon-phone', '.nav-sidebar-phone');
+  closeSidebar(block, '.nav-sidebar-phone');
+}
+
 /**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -165,32 +173,14 @@ export default async function decorate(block) {
       if (section) section.classList.add(`nav-${c}`);
     });
 
-    const navSections = nav.querySelector('.nav-sections');
-    if (navSections) {
-      navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-        navSection.addEventListener('click', () => {
-          if (isDesktop.matches) {
-            const expanded = navSection.getAttribute('aria-expanded') === 'true';
-            toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-          }
-        });
-      });
-    }
-
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
     hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
         <span class="nav-hamburger-icon"></span>
       </button>`;
-    hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
     nav.append(hamburger);
     nav.setAttribute('aria-expanded', 'false');
-    // prevent mobile nav behavior on window resize
-    toggleMenu(nav, navSections, isDesktop.matches);
-    isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
     decorateIcons(nav);
     const navWrapper = document.createElement('div');
@@ -198,8 +188,9 @@ export default async function decorate(block) {
     navWrapper.append(nav);
     block.append(navWrapper);
 
-    hamburgerClicked(block);
-    hamburgerClose(block);
+    openSidebar(block);
+    closeSidebar(block);
     toggleLanguageNav(block);
+    decorateSecondarySidebar(block);
   }
 }
