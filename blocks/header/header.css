@@ -5,6 +5,11 @@ header .nav-wrapper {
   position: fixed;
   background-color: var(--transparent-black);
   top: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+header.hide .nav-wrapper {
+  opacity: 0;
 }
 
 header nav {

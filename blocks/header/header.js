@@ -155,6 +155,11 @@ function decorateSecondarySidebar(block) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  window.onscroll = function () {
+    if (window.scrollY > 80) block.closest('header').classList.add('hide');
+    else block.closest('header').classList.remove('hide');
+  };
+
   // fetch nav content
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta).pathname : '/drafts/paolom/nav';
