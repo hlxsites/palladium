@@ -440,7 +440,7 @@ main .section.apuntate-si ul+p {
     position: relative;
   }
 
-  .organisation main > div > div.default-content-wrapper:first-of-type * {
+  .organisation main > div:first-of-type > div.default-content-wrapper:first-of-type * {
     max-width: 85%;
   }
 
