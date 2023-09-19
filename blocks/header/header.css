@@ -227,6 +227,11 @@ header nav .nav-sections > ul > li > ul > li {
   font-weight: 500;
 }
 
+header nav ul > li:last-child > ul li {
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+}
+
 .nav-sidebar-phone li:nth-child(5) {
   margin-bottom: 27px;
 }
@@ -237,6 +242,17 @@ header nav .nav-sections > ul > li > ul > li {
 }
 
 .nav-sidebar-phone li:nth-last-child(-n + 2) {
+  margin-bottom: 20px;
+}
+
+.nav-sidebar-phone li:nth-child(3) {
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+}
+
+.nav-sidebar-phone li:has(.icon + a) {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -264,22 +280,6 @@ header nav .nav-sidebar-new > ul {
 header nav .nav-sidebar-new > ul > li > a {
   text-decoration: none;
   transition: all .2s linear;
-}
-
-.nav-sidebar-phone li:nth-child(3) {
-  padding-bottom: 56px;
-  margin-bottom: 56px;
-}
-
-.nav-sidebar-phone li:has(.icon + a) {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-header nav ul > li:last-child > ul li {
-  font-size: var(--body-font-size-xs);
-  color: var(--text-color);
 }
 
 header nav .nav-sidebar-new > ul > li:not(:first-of-type) {
