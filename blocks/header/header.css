@@ -322,6 +322,15 @@ header nav .nav-sections > ul > li > ul {
   right: 0;
 }
 
+.nav-sidebar-phone.open li {
+  font-size: var(--body-font-size-l);
+  text-align: left;
+}
+
+.nav-sidebar-phone.open li:nth-child(2) {
+  font-size: 24px;
+}
+
 @media (min-width: 992px) {
   .nav-sidebar-phone li:nth-last-child(-n + 2) {
     margin-bottom: 0;
