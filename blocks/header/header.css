@@ -549,14 +549,14 @@ header nav .nav-sections ul > li:has(span.icon) {
     display: block;
   }
 
-  header nav .nav-sections ul > li:has(span.icon) {
-    font-size: unset;
-  }
-
   header nav .nav-sections > ul > li:nth-child(3) {
     position: relative;
     overflow: visible;
     padding-left: 20px;
+  }
+
+  header nav .nav-sections ul > li:has(span.icon) {
+    font-size: unset;
   }
 
   header nav .nav-sections > ul > li:nth-child(3) .icon.icon-phone {
