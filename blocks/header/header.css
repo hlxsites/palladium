@@ -553,6 +553,21 @@ header nav .nav-sections ul > li:has(span.icon) {
     font-size: unset;
   }
 
+  header nav .nav-sections > ul > li:nth-child(3) {
+    position: relative;
+    overflow: visible;
+    padding-left: 20px;
+  }
+
+  header nav .nav-sections > ul > li:nth-child(3) .icon.icon-phone {
+    position: absolute;
+    top: -1px;
+    right: -9px;
+    width: 70px;
+    height: 100%;
+    padding-right: 53px;
+  }
+
   header .nav-sections > ul > li:has(span.icon.icon-globe) {
     font-size: 0;
   }
