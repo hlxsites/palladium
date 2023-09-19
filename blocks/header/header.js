@@ -126,23 +126,24 @@ function closeLanguageNavOnClickOutside(globe) {
 }
 
 function toggleLanguageNav(block) {
-  const languageToggleEl = block.querySelector('.nav-sidebar-new > ul li:last-child');
+  const languageToggleEls = block.querySelectorAll('.nav-sidebar-new > ul li:last-child, .nav-sections > ul li:last-child');
   const ACTIVE = 'active';
 
-  languageToggleEl.addEventListener('click', () => {
-    const isActive = languageToggleEl.classList.contains(ACTIVE);
-    if (isActive) {
-      languageToggleEl.classList.remove(ACTIVE);
-    } else {
-      languageToggleEl.classList.add(ACTIVE);
-    }
+  [...languageToggleEls].forEach((languageToggleEl) => {
+    languageToggleEl.addEventListener('click', () => {
+      const isActive = languageToggleEl.classList.contains(ACTIVE);
+      if (isActive) {
+        languageToggleEl.classList.remove(ACTIVE);
+      } else {
+        languageToggleEl.classList.add(ACTIVE);
+      }
+    });
+    closeLanguageNavOnClickOutside(languageToggleEl);
   });
-
-  closeLanguageNavOnClickOutside(languageToggleEl);
 }
 
 function decorateSecondarySidebar(block) {
-  const sidebarUlEl = block.querySelector('.nav-sections ul li:last-child ul');
+  const sidebarUlEl = block.querySelector('.nav-sections ul li:nth-child(3) ul');
   sidebarUlEl?.classList.add('nav-sidebar-phone');
 
   openSidebar(block, '.nav-sections .icon.icon-phone', '.nav-sidebar-phone');
@@ -156,7 +157,7 @@ function decorateSecondarySidebar(block) {
 export default async function decorate(block) {
   // fetch nav content
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta).pathname : '/drafts/thomas/nav';
+  const navPath = navMeta ? new URL(navMeta).pathname : '/drafts/paolom/nav';
   const resp = await fetch(`${navPath}.plain.html`);
 
   if (resp.ok) {
