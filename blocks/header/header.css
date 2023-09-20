@@ -76,6 +76,7 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
 }
 
 header nav .nav-sidebar-phone li > a {
