@@ -509,6 +509,10 @@ header nav .nav-sidebar-new > ul > li:not(:nth-child(-n+3)) > a {
   header nav .nav-sidebar-new > ul > li:nth-last-child(2) > a {
     margin: 10px 0;
   }
+
+  header nav .nav-sidebar-new > ul > li:not(:nth-last-child(-n+3)) > a:hover {
+    color: var(--text-gold-dark);
+  }
 }
 
 header nav .nav-sections ul > li.active > ul > li > a {
