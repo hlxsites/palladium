@@ -47,6 +47,19 @@ header nav[aria-expanded="true"] {
     min-height: 0;
     overflow: visible;
   }
+
+  .modal-filter {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+    opacity: .1;
+    height: 100vh;
+    background: #000;
+  }
 }
 
 header nav ul li {

@@ -86,9 +86,48 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Show the modal when sidebar is open.
+ * This modal also helps to target click event outside
+ * of sidebar.
+ */
+function showModalBackground(block) {
+  block.querySelector('.modal-filter').style.display = 'block';
+}
+
+function hideModalBackground(block) {
+  block.querySelector('.modal-filter').style.display = 'none';
+}
+
+function closeSidebar(block, clsName = '.nav-sidebar-new') {
+  const sidebar = block.querySelector(clsName);
+  const isSidebarOpen = sidebar.classList.contains('open');
+
+  if (isSidebarOpen) {
+    sidebar.classList.remove('open');
+    document.body.style = '';
+    hideModalBackground(block);
+  }
+}
+
+function closeSidebarOnClickOutside(block) {
+  const modalEl = document.querySelector('.modal-filter');
+  const isReservasSidebar = document.querySelector('.nav-sidebar-phone.open');
+
+  document.addEventListener('click', (event) => {
+    if (modalEl && event.target === modalEl) {
+      if (isReservasSidebar) {
+        closeSidebar(block, '.nav-sidebar-phone');
+      } else {
+        closeSidebar(block);
+      }
+    }
+  });
+}
+
+/**
  * Open the sidebar on click of hamburger
  */
-function openSidebar(block, target = '.nav-hamburger', clsName = '.nav-sidebar-new') {
+function handleSidebarOpen(block, target = '.nav-hamburger', clsName = '.nav-sidebar-new') {
   const hamburger = block.querySelector(target);
 
   hamburger.addEventListener('click', () => {
@@ -96,6 +135,8 @@ function openSidebar(block, target = '.nav-hamburger', clsName = '.nav-sidebar-n
     const isSidebarOpen = sidebar.classList.contains('open');
     if (!isSidebarOpen) {
       sidebar.classList.add('open');
+      showModalBackground(block);
+      closeSidebarOnClickOutside(block);
     }
   });
 }
@@ -103,16 +144,11 @@ function openSidebar(block, target = '.nav-hamburger', clsName = '.nav-sidebar-n
 /**
  * Close the sidebar on click of close
  */
-function closeSidebar(block, clsName = '.nav-sidebar-new') {
-  const sidebar = block.querySelector(clsName);
+function handleSidebarClose(block, clsName = '.nav-sidebar-new') {
   const closeBtn = block.querySelector(`header nav ${clsName} .icon.icon-close`);
 
   closeBtn.addEventListener('click', () => {
-    const isSidebarOpen = sidebar.classList.contains('open');
-    if (isSidebarOpen) {
-      sidebar.classList.remove('open');
-      document.body.style = '';
-    }
+    closeSidebar(block, clsName);
   });
 }
 
@@ -146,8 +182,14 @@ function decorateSecondarySidebar(block) {
   const sidebarUlEl = block.querySelector('.nav-sections ul li:nth-child(3) ul');
   sidebarUlEl?.classList.add('nav-sidebar-phone');
 
-  openSidebar(block, '.nav-sections .icon.icon-phone', '.nav-sidebar-phone');
-  closeSidebar(block, '.nav-sidebar-phone');
+  handleSidebarOpen(block, '.nav-sections .icon.icon-phone', '.nav-sidebar-phone');
+  handleSidebarClose(block, '.nav-sidebar-phone');
+}
+
+function addModalElementToSidebar(nav) {
+  const modalEl = document.createElement('div');
+  modalEl.classList.add('modal-filter');
+  nav.append(modalEl);
 }
 
 /**
@@ -186,6 +228,7 @@ export default async function decorate(block) {
         <span class="nav-hamburger-icon"></span>
       </button>`;
     nav.append(hamburger);
+    addModalElementToSidebar(nav);
     nav.setAttribute('aria-expanded', 'false');
 
     decorateIcons(nav);
@@ -194,8 +237,8 @@ export default async function decorate(block) {
     navWrapper.append(nav);
     block.append(navWrapper);
 
-    openSidebar(block);
-    closeSidebar(block);
+    handleSidebarOpen(block);
+    handleSidebarClose(block);
     toggleLanguageNav(block);
     decorateSecondarySidebar(block);
   }
