@@ -86,13 +86,125 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Show the modal when sidebar is open.
+ * This modal also helps to target click event outside
+ * of sidebar.
+ */
+function showModalBackground(block) {
+  block.querySelector('.modal-filter').style.display = 'block';
+}
+
+function hideModalBackground(block) {
+  block.querySelector('.modal-filter').style.display = 'none';
+}
+
+function closeSidebar(block, clsName = '.nav-sidebar-new') {
+  const sidebar = block.querySelector(clsName);
+  const isSidebarOpen = sidebar.classList.contains('open');
+
+  if (isSidebarOpen) {
+    sidebar.classList.remove('open');
+    document.body.style = '';
+    hideModalBackground(block);
+  }
+}
+
+function closeSidebarOnClickOutside(block) {
+  const modalEl = document.querySelector('.modal-filter');
+  const isReservasSidebar = document.querySelector('.nav-sidebar-phone.open');
+
+  document.addEventListener('click', (event) => {
+    if (modalEl && event.target === modalEl) {
+      if (isReservasSidebar) {
+        closeSidebar(block, '.nav-sidebar-phone');
+      } else {
+        closeSidebar(block);
+      }
+    }
+  });
+}
+
+/**
+ * Open the sidebar on click of hamburger
+ */
+function handleSidebarOpen(block, target = '.nav-hamburger', clsName = '.nav-sidebar-new') {
+  const hamburger = block.querySelector(target);
+
+  hamburger.addEventListener('click', () => {
+    const sidebar = block.querySelector(clsName);
+    const isSidebarOpen = sidebar.classList.contains('open');
+    if (!isSidebarOpen) {
+      sidebar.classList.add('open');
+      showModalBackground(block);
+      closeSidebarOnClickOutside(block);
+    }
+  });
+}
+
+/**
+ * Close the sidebar on click of close
+ */
+function handleSidebarClose(block, clsName = '.nav-sidebar-new') {
+  const closeBtn = block.querySelector(`header nav ${clsName} .icon.icon-close`);
+
+  closeBtn.addEventListener('click', () => {
+    closeSidebar(block, clsName);
+  });
+}
+
+function closeLanguageNavOnClickOutside(globe) {
+  document.addEventListener('click', (event) => {
+    const target = event.target.closest('li.active');
+    if (target !== globe || !target) {
+      globe.classList.remove('active');
+    }
+  });
+}
+
+function toggleLanguageNav(block) {
+  const languageToggleEls = block.querySelectorAll('.nav-sidebar-new > ul li:last-child, .nav-sections > ul li:last-child');
+  const ACTIVE = 'active';
+
+  [...languageToggleEls].forEach((languageToggleEl) => {
+    languageToggleEl.addEventListener('click', () => {
+      const isActive = languageToggleEl.classList.contains(ACTIVE);
+      if (isActive) {
+        languageToggleEl.classList.remove(ACTIVE);
+      } else {
+        languageToggleEl.classList.add(ACTIVE);
+      }
+    });
+    closeLanguageNavOnClickOutside(languageToggleEl);
+  });
+}
+
+function decorateSecondarySidebar(block) {
+  const sidebarUlEl = block.querySelector('.nav-sections ul li:nth-child(3) ul');
+  sidebarUlEl?.classList.add('nav-sidebar-phone');
+
+  handleSidebarOpen(block, '.nav-sections .icon.icon-phone', '.nav-sidebar-phone');
+  handleSidebarClose(block, '.nav-sidebar-phone');
+}
+
+function addModalElementToSidebar(nav) {
+  const modalEl = document.createElement('div');
+  modalEl.classList.add('modal-filter');
+  nav.append(modalEl);
+}
+
+/**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) block.closest('header').classList.add('hide');
+    else block.closest('header').classList.remove('hide');
+  });
+
   // fetch nav content
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta).pathname : '/drafts/paolom/nav';
   const resp = await fetch(`${navPath}.plain.html`);
 
   if (resp.ok) {
@@ -103,25 +215,11 @@ export default async function decorate(block) {
     nav.id = 'nav';
     nav.innerHTML = html;
 
-    const classes = ['menu', 'brand', 'sections', 'tools'];
+    const classes = ['menu', 'brand', 'sections', 'sidebar-new'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
     });
-
-    const navSections = nav.querySelector('.nav-sections');
-    if (navSections) {
-      navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-        navSection.addEventListener('click', () => {
-          if (isDesktop.matches) {
-            const expanded = navSection.getAttribute('aria-expanded') === 'true';
-            toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-          }
-        });
-      });
-    }
 
     // hamburger for mobile
     const hamburger = document.createElement('div');
@@ -129,17 +227,19 @@ export default async function decorate(block) {
     hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
         <span class="nav-hamburger-icon"></span>
       </button>`;
-    hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
     nav.append(hamburger);
+    addModalElementToSidebar(nav);
     nav.setAttribute('aria-expanded', 'false');
-    // prevent mobile nav behavior on window resize
-    toggleMenu(nav, navSections, isDesktop.matches);
-    isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
     decorateIcons(nav);
     const navWrapper = document.createElement('div');
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
     block.append(navWrapper);
+
+    handleSidebarOpen(block);
+    handleSidebarClose(block);
+    toggleLanguageNav(block);
+    decorateSecondarySidebar(block);
   }
 }
