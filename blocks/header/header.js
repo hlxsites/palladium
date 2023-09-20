@@ -155,10 +155,10 @@ function decorateSecondarySidebar(block) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  window.onscroll = function () {
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 80) block.closest('header').classList.add('hide');
     else block.closest('header').classList.remove('hide');
-  };
+  });
 
   // fetch nav content
   const navMeta = getMetadata('nav');
