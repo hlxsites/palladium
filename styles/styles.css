@@ -455,7 +455,20 @@ main .section.apuntate-si ul+p {
 
   .organisation main > div > div.default-content-wrapper:first-of-type p:first-child {
     position: absolute;
-    top: 50px;
+    top: 70px;
     right: 0;
+  }
+
+  .organisation main > div:nth-of-type(3) .default-content-wrapper ul:first-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 10px 0 0;
+    gap: 2%;
+  }
+
+  .organisation main > div:nth-of-type(3) .default-content-wrapper ul:first-of-type li {
+    flex: 1;
+    margin-left: 20px;
   }
 }
