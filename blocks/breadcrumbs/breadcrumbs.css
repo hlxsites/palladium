@@ -47,4 +47,5 @@
 
 .breadcrumbs ol li a {
   color: var(--breadcrumbs-color);
+  text-decoration: none;
 }
