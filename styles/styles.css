@@ -459,16 +459,19 @@ main .section.apuntate-si ul+p {
     right: 0;
   }
 
-  .organisation main > div:nth-of-type(3) .default-content-wrapper ul:first-of-type {
+  main > div:nth-of-type(3) .default-content-wrapper ul:first-of-type {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
     padding: 10px 0 0;
     gap: 2%;
   }
 
-  .organisation main > div:nth-of-type(3) .default-content-wrapper ul:first-of-type li {
+  main > div:nth-of-type(3) .default-content-wrapper ul:first-of-type li {
     flex: 1;
     margin-left: 20px;
+  }
+
+  .organisation main > div:nth-of-type(3) .default-content-wrapper ul:first-of-type {
+    width: 80%;
   }
 }
