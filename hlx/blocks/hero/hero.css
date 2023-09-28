@@ -25,7 +25,7 @@ main .hero {
 @media (min-width: 991px) {
   main .hero::before {
     content: '';
-    background: url('/hlx/icons/palladium-care.svg');
+    background: url('../../icons/palladium-care.svg');
     width: 200px;
     height: 175px;
     background-size: cover;

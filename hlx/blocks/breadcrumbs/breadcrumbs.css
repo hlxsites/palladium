@@ -35,7 +35,7 @@
 }
 
 .breadcrumbs ol li:not(:last-of-type)::after {
-  background: url('/hlx/icons/chevron-right-regular-aea780.svg') no-repeat;
+  background: url('../../icons/chevron-right-regular-aea780.svg') no-repeat;
   height: 15px;
   width: 30px;
   content: '';
