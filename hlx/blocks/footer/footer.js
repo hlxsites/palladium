@@ -9,7 +9,7 @@ export default async function decorate(block) {
   block.textContent = '';
 
   // fetch footer content
-  const footerPath = cfg.footer || '/hxl/footer';
+  const footerPath = cfg.footer || '/hlx/footer';
   const resp = await fetch(`${footerPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
 
   if (resp.ok) {
