@@ -650,7 +650,6 @@ export function setup() {
   if (scriptEl) {
     try {
       [window.hlx.codeBasePath] = new URL(scriptEl.src).pathname.split('/scripts/scripts.js');
-      console.error([window.hlx.codeBasePath]);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
