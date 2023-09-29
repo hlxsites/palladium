@@ -5,7 +5,7 @@ indices:
       - /es/cares/4-causas/**
     exclude:
       - /es/cares/4-causas/infancia/fragments/**
-    target: /query-index.json
+    target: /hlx/query-index.json
     properties:
       lastModified:
         select: none

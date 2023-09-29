@@ -17,7 +17,7 @@ export default async function decorate(block) {
   ];
   const path = window.location.pathname;
   const pathSplit = path.split('/');
-  const pageIndex = await ffetch('/query-index.json').all();
+  const pageIndex = await ffetch('/hlx/query-index.json').all();
   const urlForIndex = (index) => prependSlash(pathSplit.slice(1, index + 2).join('/'));
 
   breadcrumbs.push(

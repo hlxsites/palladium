@@ -300,7 +300,7 @@
 
   .footer .center > div > div > ul > li::after {
     content: '';
-    background: url('/icons/chevron-down-regular-705407.svg') no-repeat;
+    background: url('../../icons/chevron-down-regular-705407.svg') no-repeat;
     width: 15px;
     height: 15px;
     display: inline-block;
