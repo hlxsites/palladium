@@ -202,7 +202,9 @@ header .nav-sections > ul > li {
   list-style: none;
 }
 
-header nav .nav-brand .icon {
+
+header nav .nav-brand .icon,
+header nav .nav-brand img {
   width: 150px;
   height: auto;
 }
