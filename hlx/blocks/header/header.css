@@ -209,7 +209,7 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections   */
+/*  sections   */
 header nav .nav-sections {
   grid-area: sections;
   background-color: var(--overlay-color);
